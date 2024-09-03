@@ -33,7 +33,7 @@ To run the project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   https://github.com/amine-zzr/real-time_ChatApp.git
+   git clone https://github.com/amine-zzr/real-time_ChatApp.git
    cd realtime-chat-app
 
 2. **Install dependencies:**
