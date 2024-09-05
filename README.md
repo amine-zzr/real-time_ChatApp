@@ -46,3 +46,42 @@ To run the project locally, follow these steps:
 
 4. **Access the application:**
    Open your browser and navigate to `http://localhost:3000`.
+
+
+## Project Structure
+```bash
+/chat-app
+│
+├── /backend
+│   ├── /controllers
+│   │   ├── authController.js        // Handles user authentication logic
+│   │   └── chatController.js        // Handles chat message logic
+│   ├── /models
+│   │   └── userModel.js             // User model for registration and login
+│   ├── /routes
+│   │   ├── authRoutes.js            // Routes for authentication (register, login)
+│   │   └── chatRoutes.js            // Routes for chat interactions
+│   ├── /middlewares
+│   │   └── authMiddleware.js        // Middleware for protecting chat routes
+│   ├── /utils
+│   │   └── tokenUtils.js            // JWT token creation/verification
+│   ├── server.js                    // Main server entry point
+│   └── socket.js                    // Socket.IO server handling
+│
+├── /frontend
+│   ├── /public
+│   │   └── index.html               // Frontend template for chat and login
+│   ├── /css
+│   │   └── styles.css               // Styling for chat and login forms
+│   ├── /js
+│   │   ├── chat.js                  // Handles real-time chat logic in frontend
+│   │   └── auth.js                  // Handles registration/login in frontend
+│   └── /images                      // Place to store images for the future post feature
+│
+├── /config
+│   ├── database.js                  // MongoDB connection setup
+│   └── env.js                       // Environment variables (e.g., PORT, DB_URI)
+│
+├── package.json                      // NPM dependencies
+└── README.md                         // Project documentation
+```
