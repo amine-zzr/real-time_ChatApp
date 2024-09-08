@@ -1,10 +1,24 @@
 .login-container, .register-container, .profile-container, .settings-container, .chat-container {
-	max-width: 400px;
+	max-width: 600px;
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #ddd;
 	border-radius: 8px;
-	box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+	box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+  }
+
+  html, body {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f5f5f5;
   }
 
   form div {
