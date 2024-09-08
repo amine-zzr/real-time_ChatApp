@@ -2,3 +2,5 @@ node_modules
 build/
 .module-cache*.log*
 .vscode
+.env
+__pycache__
