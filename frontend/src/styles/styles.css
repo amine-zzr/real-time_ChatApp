@@ -1,0 +1,40 @@
+.login-container, .register-container, .profile-container, .settings-container, .chat-container {
+	max-width: 400px;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+  }
+
+  form div {
+	margin-bottom: 10px;
+  }
+
+  form label {
+	display: block;
+  }
+
+  form input {
+	width: 100%;
+	padding: 8px;
+	margin: 5px 0;
+	box-sizing: border-box;
+  }
+
+  button {
+	padding: 10px 20px;
+	background-color: #007BFF;
+	color: white;
+	border: none;
+	border-radius: 4px;
+  }
+
+  .messages {
+	list-style: none;
+	padding: 0;
+  }
+
+  .messages li {
+	margin: 10px 0;
+  }
