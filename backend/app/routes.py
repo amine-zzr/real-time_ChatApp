@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from flask_login import login_user, logout_user, current_user, login_required
+from flask_login import login_user, logout_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import db
 from app.models import User
@@ -8,6 +8,11 @@ main = Blueprint('main', __name__)
 
 @main.route('/api/register', methods=['POST'])
 def register():
+    """
+    API endpoint to register a new user.
+    Expects 'username', 'email', and 'password' in the request body (JSON format).
+    Returns a success message upon successful registration, or an error message if the user already exists.
+    """
     data = request.get_json()
     username = data.get('username')
     email = data.get('email')
@@ -25,6 +30,11 @@ def register():
 
 @main.route('/api/login', methods=['POST'])
 def login():
+    """
+    API endpoint to log in a user.
+    Expects 'username' and 'password' in the request body (JSON format).
+    Returns a success message upon successful login, or an error message if credentials are invalid.
+    """
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
@@ -39,5 +49,10 @@ def login():
 @main.route('/api/logout', methods=['POST'])
 @login_required
 def logout():
+    """
+    API endpoint to log out the current user.
+    Requires the user to be logged in.
+    Returns a success message upon logout.
+    """
     logout_user()
     return jsonify({'status': 'success', 'message': 'Logged out successfully'}), 200
