@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  # Backend service (Flask)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: chatapp-backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - FLASK_ENV=development # enable the dev mode for hot reloading
+    command: python3 -m flask run --host=0.0.0.0 --port=5000
+
+  # Frontend Service (React)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: chatapp-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app  # Sync frontend code for hot-reloading
+    stdin_open: true
+    tty: true
+    command: npm start
+
+  # Redis Service
+  # redis:
+  #   image: redis:alpine
+  #   container_name: redis
+  #   ports:
+  #     - "6379:6379"
