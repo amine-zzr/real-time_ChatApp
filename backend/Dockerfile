@@ -17,5 +17,8 @@ EXPOSE 5000
 # Define environment variables
 ENV FLASK_ENV=development
 
+# Make Flask listens on all IP addresses, not just localhost
+ENV FLASK_RUN_HOST=0.0.0.0
+
 # Run the app with the python command
 CMD ["python3", "run.py"]
